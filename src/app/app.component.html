@@ -1,0 +1,15 @@
+<header class="container">
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Navbar</a>
+    <form *ngIf="searchForm" [formGroup]="searchForm" class="form-inline d-flex">
+      <input class="form-control " type="text" formControlName="title">
+      <button class="btn btn-outline-success" type="submit" (click)="logForm()">Search</button>
+    </form>
+  </nav>
+</header>
+<main class="container">
+  <div class="row">
+    <h1 class="text-center text-white bg-info rounded"> Featured Books</h1>
+    <app-card class="col-lg-3 mb-2 bg-light" *ngFor="let book of displayedBooks" [book]="book"></app-card>
+  </div>
+</main>
